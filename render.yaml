@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: bakery-bot
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd server && npm install
+    startCommand: cd server && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4
+      - key: OPENAI_MAX_TOKENS
+        value: 500
+      - key: OPENAI_TEMPERATURE
+        value: 0.7
+      - key: BAKERY_NAME
+        value: Blessed Handly Bakery
+      - key: BAKERY_PHONE
+        value: +256761903887
+      - key: BAKERY_LOCATION
+        value: Kampala, Uganda
+      - key: MAX_RETRIES
+        value: 2
+      - key: AI_TIMEOUT_MS
+        value: 10000
+      - key: LOG_LEVEL
+        value: info
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 60000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 100
+    healthCheckPath: /api/health

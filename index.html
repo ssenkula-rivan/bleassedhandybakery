@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blessed Handly Bakery - Premium cakes, queen cakes, and cupcakes for all occasions">
+    <title>Blessed Handly Bakery | Premium Cakes & Pastries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="Blessed Handly Bakery Logo" class="logo" onerror="this.style.display='none'">
+                <span class="brand-name">Blessed Handly Bakery</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#packages" class="nav-link">Packages</a></li>
+                <li><a href="#wholesale" class="nav-link">Wholesale</a></li>
+                <li><a href="#custom-cake" class="nav-link">Custom Design</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#booking" class="nav-link">Booking</a></li>
+                <li><a href="#vendors" class="nav-link">Vendors</a></li>
+                <li><a href="#internship" class="nav-link">Internship</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="profile-section">
+                <img src="images/profile.jpg" alt="Blessed Handly Bakery" class="profile-img" onerror="this.src='images/placeholder-profile.jpg'">
+                <div class="profile-details">
+                    <h1>Blessed Handly Bakery</h1>
+                    <p class="tagline">Crafting Sweet Memories Since Day One</p>
+                    <div class="quick-info">
+                        <p><i class="fas fa-cake-candles"></i> Premium Quality Cakes</p>
+                        <p><i class="fas fa-heart"></i> Made with Love & Care</p>
+                        <p><i class="fas fa-star"></i> Custom Designs Available</p>
+                    </div>
+                    <button class="btn-read-more" onclick="scrollToSection('about')">Read More About Us</button>
+                </div>
+            </div>
+
+            <div class="budget-selector-container">
+                <h2>Plan Your Perfect Cake</h2>
+                <p class="budget-subtitle">Find your dream cake within your budget</p>
+                <form id="budgetForm" class="budget-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="budget">Your Budget (UGX)</label>
+                            <input type="text" id="budget" placeholder="e.g., 50,000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="occasion">Occasion</label>
+                            <select id="occasion" required>
+                                <option value="">Select Occasion</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="introduction">Introduction Ceremony</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="graduation">Graduation</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="baby-shower">Baby Shower</option>
+                                <option value="other">Other Celebration</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="servings">Number of Servings</label>
+                            <input type="number" id="servings" placeholder="e.g., 50" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="cakeType">Preferred Cake Type</label>
+                            <select id="cakeType">
+                                <option value="">Any Type</option>
+                                <option value="cupcakes">Cupcakes</option>
+                                <option value="queen-cakes">Queen Cakes</option>
+                                <option value="chocolate">Chocolate Cake</option>
+                                <option value="red-velvet">Red Velvet</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="custom">Custom Design</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <small style="color: #666; font-size: 12px; margin-top: 4px; display: block;">All orders require at least 3 days advance notice</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Find Your Perfect Cake</button>
+                </form>
+                <div id="recommendations" class="recommendations"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-tabs">
+                <button class="tab-btn active" data-tab="small-cakes">Small Cakes</button>
+                <button class="tab-btn" data-tab="daddies">Daddies</button>
+                <button class="tab-btn" data-tab="big-cakes">Big Cakes</button>
+            </div>
+
+            <div class="tab-content active" id="small-cakes">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/gallery/cupcakes.JPG" alt="Cupcakes">
+                        <h3>Cupcakes</h3>
+                        <p>Delicious mini cakes perfect for any occasion</p>
+                        <p class="price">UGX 3,000 - 5,000 each</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Cupcakes')">Order Now</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/gallery/cake&ccupcakes.JPG" alt="Queen Cakes">
+                        <h3>Queen Cakes</h3>
+                        <p>Classic queen cakes with rich flavor</p>
+                        <p class="price">UGX 2,500 - 4,000 each</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Queen Cakes')">Order Now</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/gallery/spougecake.JPG" alt="Sponge Cake">
+                        <h3>Sponge Cake</h3>
+                        <p>Light and fluffy sponge perfection</p>
+                        <p class="price">UGX 25,000 - 80,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Sponge Cake')">Order Now</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/gallery/special.JPG" alt="Special Cakes">
+                        <h3>Special Cakes</h3>
+                        <p>Unique special occasion cakes</p>
+                        <p class="price">UGX 30,000 - 100,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Special Cake')">Order Now</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/gallery/suprisecakes.jpg" alt="Surprise Cakes">
+                        <h3>Surprise Cakes</h3>
+                        <p>Amazing surprise cake designs</p>
+                        <p class="price">UGX 28,000 - 95,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Surprise Cake')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="daddies">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/gallery/daddies.JPG" alt="Daddy Tins">
+                        <h3>Daddy Tin - 2kg</h3>
+                        <p>Large tin of assorted treats</p>
+                        <p class="price">UGX 45,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Daddy 2kg')">Order Now</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/gallery/IMG_4046.JPG" alt="Daddy 1kg">
+                        <h3>Daddy Tin - 1kg</h3>
+                        <p>Medium tin of delicious goodies</p>
+                        <p class="price">UGX 25,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Daddy 1kg')">Order Now</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/gallery/IMG_4047.JPG" alt="Daddy 500g">
+                        <h3>Daddy Tin - 500g</h3>
+                        <p>Small tin perfect for gifts</p>
+                        <p class="price">UGX 15,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Daddy 500g')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="big-cakes">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/gallery/IMG_4686.jpg" alt="Birthday Cake">
+                        <h3>Birthday Cakes</h3>
+                        <p>Custom designs for memorable birthdays</p>
+                        <p class="price">UGX 50,000 - 500,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Birthday Cake')">Order Now</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/gallery/wedingcakes.JPG" alt="Wedding Cake">
+                        <h3>Wedding Cakes</h3>
+                        <p>Elegant tiered cakes for your special day</p>
+                        <p class="price">UGX 200,000 - 2,000,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Wedding Cake')">Order Now</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/gallery/introcakes.JPG" alt="Introduction Cake">
+                        <h3>Introduction Cakes</h3>
+                        <p>Traditional ceremony masterpieces</p>
+                        <p class="price">UGX 150,000 - 1,500,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Introduction Cake')">Order Now</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/gallery/companycakes.JPG" alt="Company Cake">
+                        <h3>Company Event Cakes</h3>
+                        <p>Professional cakes for corporate events</p>
+                        <p class="price">UGX 100,000 - 800,000</p>
+                        <button class="btn btn-secondary" onclick="openBooking('Company Cake')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="packages-section">
+        <div class="container">
+            <h2 class="section-title">Our Packages</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Starter Package</h3>
+                        <p class="package-price">UGX 50,000 - 150,000</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 1 Small to Medium Cake</li>
+                        <li><i class="fas fa-check"></i> Basic Decoration</li>
+                        <li><i class="fas fa-check"></i> Serves 10-20 People</li>
+                        <li><i class="fas fa-check"></i> Standard Flavors</li>
+                        <li><i class="fas fa-check"></i> 24hrs Advance Order</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBooking('Starter Package')">Select Package</button>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-badge">Popular</div>
+                    <div class="package-header">
+                        <h3>Premium Package</h3>
+                        <p class="package-price">UGX 200,000 - 500,000</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 1 Large Custom Cake</li>
+                        <li><i class="fas fa-check"></i> Premium Decoration</li>
+                        <li><i class="fas fa-check"></i> Serves 30-60 People</li>
+                        <li><i class="fas fa-check"></i> Any Flavor</li>
+                        <li><i class="fas fa-check"></i> Custom Design</li>
+                        <li><i class="fas fa-check"></i> Free Delivery (Kampala)</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBooking('Premium Package')">Select Package</button>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Deluxe Package</h3>
+                        <p class="package-price">UGX 600,000 - 2,000,000</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Multi-Tier Cake</li>
+                        <li><i class="fas fa-check"></i> Luxury Decoration</li>
+                        <li><i class="fas fa-check"></i> Serves 80+ People</li>
+                        <li><i class="fas fa-check"></i> Premium Flavors</li>
+                        <li><i class="fas fa-check"></i> Edible Flowers/Gold</li>
+                        <li><i class="fas fa-check"></i> Free Delivery & Setup</li>
+                        <li><i class="fas fa-check"></i> Dedicated Consultant</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBooking('Deluxe Package')">Select Package</button>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Cupcake Party Package</h3>
+                        <p class="package-price">UGX 80,000 - 300,000</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 24-100 Cupcakes</li>
+                        <li><i class="fas fa-check"></i> Custom Toppers</li>
+                        <li><i class="fas fa-check"></i> Assorted Flavors</li>
+                        <li><i class="fas fa-check"></i> Display Stand Included</li>
+                        <li><i class="fas fa-check"></i> Perfect for Events</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBooking('Cupcake Party Package')">Select Package</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wholesale" class="wholesale-section">
+        <div class="container">
+            <h2 class="section-title">Wholesale & Retail for Tail Shops</h2>
+            <p class="section-subtitle">Premium queen cakes and small cakes at competitive wholesale prices for your business</p>
+            
+            <div class="wholesale-intro">
+                <div class="intro-card">
+                    <h3>For Tail Shops & Retailers</h3>
+                    <p>Partner with Blessed Handly Bakery for premium quality cakes that your customers will love. Perfect for supermarkets, cafes, and retail shops.</p>
+                </div>
+                <div class="intro-card">
+                    <h3>Bulk Ordering Benefits</h3>
+                    <ul>
+                        <li>Competitive wholesale pricing</li>
+                        <li>Fresh daily delivery</li>
+                        <li>Custom packaging options</li>
+                        <li>Consistent quality guarantee</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-charts">
+                <!-- Queen Cakes Wholesale -->
+                <div class="pricing-chart">
+                    <h3>Queen Cakes - Wholesale Pricing</h3>
+                    <div class="chart-table">
+                        <div class="table-header">
+                            <div>Quantity</div>
+                            <div>Price per Piece</div>
+                            <div>Total Price</div>
+                            <div>Savings</div>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>1-11 pieces</strong><br><small>Retail</small></div>
+                            <td>UGX 3,000</td>
+                            <td>UGX 3,000 - 33,000</td>
+                            <td>-</td>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>1 Dozen (12)</strong><br><small>Starter</small></div>
+                            <td>UGX 2,800</td>
+                            <td>UGX 33,600</td>
+                            <td>Save UGX 2,400</td>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>2 Dozen (24)</strong><br><small>Business</small></div>
+                            <td>UGX 2,600</td>
+                            <td>UGX 62,400</td>
+                            <td>Save UGX 7,200</td>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>5 Dozen (60)</strong><br><small>Growth</small></div>
+                            <td>UGX 2,400</td>
+                            <td>UGX 144,000</td>
+                            <td>Save UGX 36,000</td>
+                        </div>
+                        <div class="table-row featured">
+                            <div><strong>10+ Dozen</strong><br><small>Partner</small></div>
+                            <td>UGX 2,200</td>
+                            <td>UGX 264,000+</td>
+                            <td>Save UGX 96,000+</td>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Cakes Wholesale -->
+                <div class="pricing-chart">
+                    <h3>Small Cakes - Wholesale Pricing</h3>
+                    <div class="chart-table">
+                        <div class="table-header">
+                            <div>Quantity</div>
+                            <div>Price per Piece</div>
+                            <div>Total Price</div>
+                            <div>Savings</div>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>1-11 pieces</strong><br><small>Retail</small></div>
+                            <td>UGX 2,500</td>
+                            <td>UGX 2,500 - 27,500</td>
+                            <td>-</td>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>1 Dozen (12)</strong><br><small>Starter</small></div>
+                            <td>UGX 2,300</td>
+                            <td>UGX 27,600</td>
+                            <td>Save UGX 2,400</td>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>2 Dozen (24)</strong><br><small>Business</small></div>
+                            <td>UGX 2,100</td>
+                            <td>UGX 50,400</td>
+                            <td>Save UGX 7,200</td>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>5 Dozen (60)</strong><br><small>Growth</small></div>
+                            <td>UGX 1,900</td>
+                            <td>UGX 114,000</td>
+                            <td>Save UGX 36,000</td>
+                        </div>
+                        <div class="table-row featured">
+                            <div><strong>10+ Dozen</strong><br><small>Partner</small></div>
+                            <td>UGX 1,700</td>
+                            <td>UGX 204,000+</td>
+                            <td>Save UGX 96,000+</td>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mixed Dozens -->
+                <div class="pricing-chart">
+                    <h3>Mixed Dozens - Flexible Options</h3>
+                    <div class="chart-table">
+                        <div class="table-header">
+                            <div>Package</div>
+                            <div>Contents</div>
+                            <div>Price</div>
+                            <div>Best For</div>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>Mixed Starter</strong></div>
+                            <td>6 Queen + 6 Small</td>
+                            <td>UGX 30,600</td>
+                            <td>Small shops</td>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>Mixed Business</strong></div>
+                            <td>12 Queen + 12 Small</td>
+                            <td>UGX 56,400</td>
+                            <td>Medium shops</td>
+                        </div>
+                        <div class="table-row featured">
+                            <div><strong>Mixed Premium</strong></div>
+                            <td>18 Queen + 18 Small</td>
+                            <td>UGX 79,200</td>
+                            <td>Large retailers</td>
+                        </div>
+                        <div class="table-row">
+                            <div><strong>Custom Mix</strong></div>
+                            <td>Your choice</td>
+                            <td>Based on quantity</td>
+                            <td>Flexible needs</td>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Form -->
+            <div class="wholesale-order">
+                <h3>Place Wholesale Order</h3>
+                <form id="wholesaleForm" class="wholesale-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessName">Business Name *</label>
+                            <input type="text" id="businessName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessType">Business Type *</label>
+                            <select id="businessType" required>
+                                <option value="">Select Type</option>
+                                <option value="supermarket">Supermarket</option>
+                                <option value="cafe">Cafe/Restaurant</option>
+                                <option value="bakery">Bakery Shop</option>
+                                <option value="convenience">Convenience Store</option>
+                                <option value="catering">Catering Service</option>
+                                <option value="event">Event Planner</option>
+                                <option value="other">Other Retail</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactPerson">Contact Person *</label>
+                            <input type="text" id="contactPerson" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessPhone">Phone Number *</label>
+                            <input type="tel" id="businessPhone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessEmail">Email Address</label>
+                            <input type="email" id="businessEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessLocation">Business Location *</label>
+                            <input type="text" id="businessLocation" placeholder="Your shop address" required>
+                        </div>
+                    </div>
+
+                    <!-- Order Details -->
+                    <div class="order-details">
+                        <h4>Order Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="queenCakesQty">Queen Cakes (Dozens)</label>
+                                <input type="number" id="queenCakesQty" min="0" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="smallCakesQty">Small Cakes (Dozens)</label>
+                                <input type="number" id="smallCakesQty" min="0" placeholder="0">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="deliveryFrequency">Delivery Frequency *</label>
+                                <select id="deliveryFrequency" required>
+                                    <option value="">Select Frequency</option>
+                                    <option value="daily">Daily</option>
+                                    <option value="weekly">Weekly</option>
+                                    <option value="biweekly">Bi-weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                    <option value="onetime">One-time Order</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredDelivery">Preferred Delivery Time *</label>
+                                <select id="preferredDelivery" required>
+                                    <option value="">Select Time</option>
+                                    <option value="early-morning">Early Morning (5AM-7AM)</option>
+                                    <option value="morning">Morning (7AM-10AM)</option>
+                                    <option value="afternoon">Afternoon (12PM-3PM)</option>
+                                    <option value="evening">Evening (4PM-6PM)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="specialRequests">Special Requests</label>
+                            <textarea id="specialRequests" rows="3" placeholder="Custom packaging, specific flavors, delivery instructions, etc."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">Submit Wholesale Order</button>
+                        <button type="button" class="btn btn-secondary" onclick="resetWholesaleForm()">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Benefits -->
+            <div class="wholesale-benefits">
+                <h3>Why Partner With Blessed Handly Bakery?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-truck"></i>
+                        <h4>Daily Fresh Delivery</h4>
+                        <p>Fresh cakes delivered to your door every morning</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Quality Guaranteed</h4>
+                        <p>Premium ingredients and consistent taste every time</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-tags"></i>
+                        <h4>Competitive Pricing</h4>
+                        <p>Best wholesale rates in Kampala region</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-box"></i>
+                        <h4>Custom Packaging</h4>
+                        <p>Branded packaging options available</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-headset"></i>
+                        <h4>Dedicated Support</h4>
+                        <p>Personal account manager for all partners</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Growth Partnership</h4>
+                        <p>Marketing support and promotional materials</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="custom-cake" class="custom-cake-section">
+        <div class="container">
+            <h2 class="section-title">Design Your Custom Creation</h2>
+            <p class="section-subtitle">Create a custom design that's uniquely yours - every detail matters!</p>
+            
+            <div class="custom-cake-container">
+                <div class="cake-designer">
+                    <form id="customCakeForm" class="custom-cake-form">
+                        <!-- Basic Information -->
+                        <div class="form-section">
+                            <h3>Basic Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customName">Your Name *</label>
+                                    <input type="text" id="customName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="customPhone">Phone Number *</label>
+                                    <input type="tel" id="customPhone" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customEmail">Email</label>
+                                    <input type="email" id="customEmail">
+                                </div>
+                                <div class="form-group">
+                                    <label for="customEvent">Event Type *</label>
+                                    <select id="customEvent" required>
+                                        <option value="">Select Event</option>
+                                        <option value="birthday">Birthday Party</option>
+                                        <option value="wedding">Wedding</option>
+                                        <option value="anniversary">Anniversary</option>
+                                        <option value="graduation">Graduation</option>
+                                        <option value="baby-shower">Baby Shower</option>
+                                        <option value="corporate">Corporate Event</option>
+                                        <option value="religious">Religious Ceremony</option>
+                                        <option value="other">Other Celebration</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cake Specifications -->
+                        <div class="form-section">
+                            <h3>Cake Specifications</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cakeShape">Cake Shape *</label>
+                                    <select id="cakeShape" required>
+                                        <option value="">Select Shape</option>
+                                        <option value="round">Round</option>
+                                        <option value="square">Square</option>
+                                        <option value="rectangle">Rectangle</option>
+                                        <option value="heart">Heart</option>
+                                        <option value="oval">Oval</option>
+                                        <option value="hexagon">Hexagon</option>
+                                        <option value="number">Number Shape (specify)</option>
+                                        <option value="custom">Custom Shape</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cakeSize">Cake Size *</label>
+                                    <select id="cakeSize" required>
+                                        <option value="">Select Size</option>
+                                        <option value="6inch">6 inch (serves 6-8)</option>
+                                        <option value="8inch">8 inch (serves 10-12)</option>
+                                        <option value="10inch">10 inch (serves 15-20)</option>
+                                        <option value="12inch">12 inch (serves 25-30)</option>
+                                        <option value="14inch">14 inch (serves 35-40)</option>
+                                        <option value="tier2">2-Tier Cake (serves 30-40)</option>
+                                        <option value="tier3">3-Tier Cake (serves 50-70)</option>
+                                        <option value="tier4">4+ Tier Cake (serves 80+)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cakeFlavor">Cake Flavor *</label>
+                                    <select id="cakeFlavor" required>
+                                        <option value="">Select Flavor</option>
+                                        <optgroup label="Classic Flavors">
+                                            <option value="vanilla">Classic Vanilla</option>
+                                            <option value="chocolate">Rich Chocolate</option>
+                                            <option value="red-velvet">Red Velvet</option>
+                                            <option value="strawberry">Fresh Strawberry</option>
+                                        </optgroup>
+                                        <optgroup label="Premium Flavors">
+                                            <option value="black-forest">Black Forest</option>
+                                            <option value="tiramisu">Tiramisu</option>
+                                            <option value="carrot">Carrot Cake</option>
+                                            <option value="lemon">Lemon Drizzle</option>
+                                        </optgroup>
+                                        <optgroup label="Exotic Flavors">
+                                            <option value="red-velvet">Red Velvet</option>
+                                            <option value="blueberry">Blueberry</option>
+                                            <option value="mango">Mango Passion</option>
+                                            <option value="coconut">Coconut</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cakeFilling">Cake Filling *</label>
+                                    <select id="cakeFilling" required>
+                                        <option value="">Select Filling</option>
+                                        <option value="buttercream">Buttercream</option>
+                                        <option value="chocolate-ganache">Chocolate Ganache</option>
+                                        <option value="cream-cheese">Cream Cheese</option>
+                                        <option value="whipped-cream">Whipped Cream</option>
+                                        <option value="fruit-custard">Fruit Custard</option>
+                                        <option value="caramel">Caramel</option>
+                                        <option value="no-filling">No Filling</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decoration & Design -->
+                        <div class="form-section">
+                            <h3>Decoration & Design</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="frostingType">Frosting Type *</label>
+                                    <select id="frostingType" required>
+                                        <option value="">Select Frosting</option>
+                                        <option value="buttercream-smooth">Smooth Buttercream</option>
+                                        <option value="buttercream-textured">Textured Buttercream</option>
+                                        <option value="fondant-smooth">Smooth Fondant</option>
+                                        <option value="fondant-textured">Textured Fondant</option>
+                                        <option value="whipped-cream">Whipped Cream</option>
+                                        <option value="cream-cheese">Cream Cheese Frosting</option>
+                                        <option value="ganache-drip">Chocolate Ganache Drip</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="frostingColor">Primary Color *</label>
+                                    <select id="frostingColor" required>
+                                        <option value="">Select Color</option>
+                                        <option value="white">White</option>
+                                        <option value="ivory">Ivory</option>
+                                        <option value="pink">Pink</option>
+                                        <option value="blue">Blue</option>
+                                        <option value="red">Red</option>
+                                        <option value="purple">Purple</option>
+                                        <option value="gold">Gold</option>
+                                        <option value="silver">Silver</option>
+                                        <option value="black">Black</option>
+                                        <option value="custom-color">Custom Color (specify)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="decorationStyle">Decoration Style *</label>
+                                    <select id="decorationStyle" required>
+                                        <option value="">Select Style</option>
+                                        <option value="elegant">Elegant & Classic</option>
+                                        <option value="modern">Modern & Minimalist</option>
+                                        <option value="rustic">Rustic & Natural</option>
+                                        <option value="floral">Floral & Romantic</option>
+                                        <option value="geometric">Geometric Patterns</option>
+                                        <option value="themed">Themed (specify theme)</option>
+                                        <option value="photo-edible">Edible Photo Print</option>
+                                        <option value="hand-painted">Hand Painted</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="decorationTheme">Theme/Message</label>
+                                    <input type="text" id="decorationTheme" placeholder="e.g., Princess Theme, 'Happy 30th Birthday'">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special Requirements -->
+                        <div class="form-section">
+                            <h3>Special Requirements</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="specialDietary">Dietary Requirements</label>
+                                    <select id="specialDietary" multiple>
+                                        <option value="none">None</option>
+                                        <option value="vegetarian">Vegetarian</option>
+                                        <option value="vegan">Vegan</option>
+                                        <option value="gluten-free">Gluten-Free</option>
+                                        <option value="nut-free">Nut-Free</option>
+                                        <option value="dairy-free">Dairy-Free</option>
+                                        <option value="egg-free">Egg-Free</option>
+                                        <option value="sugar-free">Reduced Sugar</option>
+                                    </select>
+                                    <small>Hold Ctrl/Cmd to select multiple</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="allergies">Allergies to Avoid</label>
+                                    <input type="text" id="allergies" placeholder="List any allergies (nuts, dairy, etc.)">
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="customDetails">Specific Design Details</label>
+                                <textarea id="customDetails" rows="4" placeholder="Describe your dream cake in detail - colors, patterns, specific decorations, cake toppers, etc."></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="referenceImage">Reference Image URL (optional)</label>
+                                <input type="url" id="referenceImage" placeholder="https://example.com/cake-image.jpg">
+                                <small>If you have inspiration photos, please provide links</small>
+                            </div>
+                        </div>
+
+                        <!-- Event Details -->
+                        <div class="form-section">
+                            <h3>Event Details</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customDate">Event Date *</label>
+                                    <input type="date" id="customDate" required>
+                                    <small style="color: #666; font-size: 12px; margin-top: 4px; display: block;">Custom cakes require at least 5 days advance notice</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="customBudget">Budget Range (UGX) *</label>
+                                    <select id="customBudget" required>
+                                        <option value="">Select Budget Range</option>
+                                        <option value="50000-100000">50,000 - 100,000</option>
+                                        <option value="100000-200000">100,000 - 200,000</option>
+                                        <option value="200000-500000">200,000 - 500,000</option>
+                                        <option value="500000-1000000">500,000 - 1,000,000</option>
+                                        <option value="1000000+">1,000,000+</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="deliveryLocation">Delivery Location</label>
+                                    <input type="text" id="deliveryLocation" placeholder="Your address in Kampala">
+                                </div>
+                                <div class="form-group">
+                                    <label for="deliveryTime">Preferred Delivery Time</label>
+                                    <select id="deliveryTime">
+                                        <option value="">Select Time</option>
+                                        <option value="morning">Morning (8AM - 12PM)</option>
+                                        <option value="afternoon">Afternoon (12PM - 4PM)</option>
+                                        <option value="evening">Evening (4PM - 7PM)</option>
+                                        <option value="flexible">Flexible</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">Submit Custom Cake Design</button>
+                            <button type="button" class="btn btn-secondary" onclick="resetCustomCakeForm()">Clear Form</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="custom-cake-info">
+                    <div class="info-card">
+                        <h3>Why Choose Custom?</h3>
+                        <ul>
+                            <li>Unique design tailored to your event</li>
+                            <li>Personalized flavors and decorations</li>
+                            <li>Perfect match for your theme</li>
+                            <li>Instagram-worthy creations</li>
+                            <li>Expert consultation included</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⏰ Timeline</h3>
+                        <ul>
+                            <li><strong>Simple Designs:</strong> 5-7 days</li>
+                            <li><strong>Complex Designs:</strong> 7-14 days</li>
+                            <li><strong>Wedding Cakes:</strong> 2-4 weeks</li>
+                            <li><strong>Consultation:</strong> Within 24 hours</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Pricing Factors</h3>
+                        <ul>
+                            <li>Cake size and servings</li>
+                            <li>Complexity of design</li>
+                            <li>Special ingredients</li>
+                            <li>Delivery requirements</li>
+                            <li>Custom decorations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <p class="section-subtitle">Click any image to view details, rate, and comment</p>
+            
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="wedding">Weddings</button>
+                <button class="filter-btn" data-filter="birthday">Birthdays</button>
+                <button class="filter-btn" data-filter="corporate">Corporate</button>
+                <button class="filter-btn" data-filter="custom">Custom Designs</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="galleryModal">
+        <div class="modal-content gallery-modal-content">
+            <button class="modal-close" onclick="closeGalleryModal()">&times;</button>
+            <div class="gallery-modal-body">
+                <div class="gallery-image-container">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="gallery-details-container">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDescription"></p>
+                    <div class="rating-section">
+                        <h4>Rate this cake:</h4>
+                        <div class="stars" id="ratingStars">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <p class="average-rating"></p>
+                    </div>
+                    <div class="testimonial-section">
+                        <h4>Testimonials</h4>
+                        <div id="testimonials"></div>
+                        <form id="testimonialForm" class="testimonial-form">
+                            <textarea placeholder="Share your experience..." required></textarea>
+                            <input type="text" placeholder="Your Name" required>
+                            <button type="submit" class="btn btn-secondary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2 class="section-title">Book Your Cake</h2>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bookingName">Full Name *</label>
+                        <input type="text" id="bookingName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingPhone">Phone Number *</label>
+                        <input type="tel" id="bookingPhone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bookingEmail">Email</label>
+                        <input type="email" id="bookingEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingOccasion">Occasion *</label>
+                        <select id="bookingOccasion" required>
+                            <option value="">Select Occasion</option>
+                            <option value="birthday">Birthday Party</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="introduction">Introduction Ceremony</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="graduation">Graduation</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="baby-shower">Baby Shower</option>
+                            <option value="other">Other Celebration</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bookingProduct">Product/Package *</label>
+                        <select id="bookingProduct" required>
+                            <option value="">Select Product</option>
+                            <optgroup label="Small Cakes">
+                                <option value="Cupcakes">Cupcakes</option>
+                                <option value="Queen Cakes">Queen Cakes</option>
+                                <option value="Chocolate Cake">Chocolate Cake</option>
+                                <option value="Red Velvet">Red Velvet</option>
+                                <option value="Blueberry">Blueberry</option>
+                            </optgroup>
+                            <optgroup label="Daddies">
+                                <option value="Daddy 2kg">Daddy Tin 2kg</option>
+                                <option value="Daddy 1kg">Daddy Tin 1kg</option>
+                                <option value="Daddy 500g">Daddy Tin 500g</option>
+                            </optgroup>
+                            <optgroup label="Big Cakes">
+                                <option value="Birthday Cake">Birthday Cake</option>
+                                <option value="Wedding Cake">Wedding Cake</option>
+                                <option value="Introduction Cake">Introduction Cake</option>
+                                <option value="Ceremony Cake">Ceremony Party Cake</option>
+                            </optgroup>
+                            <optgroup label="Packages">
+                                <option value="Starter Package">Starter Package</option>
+                                <option value="Premium Package">Premium Package</option>
+                                <option value="Deluxe Package">Deluxe Package</option>
+                                <option value="Cupcake Party Package">Cupcake Party Package</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingDate">Event Date *</label>
+                        <input type="date" id="bookingDate" required>
+                        <small style="color: #666; font-size: 12px; margin-top: 4px; display: block;">Events must be booked at least 3 days in advance</small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bookingBudget">Budget (UGX) *</label>
+                        <input type="text" id="bookingBudget" placeholder="e.g., 100,000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingServings">Number of Servings</label>
+                        <input type="number" id="bookingServings" min="1">
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="bookingDetails">Additional Details</label>
+                    <textarea id="bookingDetails" rows="4" placeholder="Tell us about your cake preferences, design ideas, colors, themes, etc."></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <label for="bookingLocation">Delivery Location</label>
+                    <input type="text" id="bookingLocation" placeholder="Delivery address">
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">Submit Booking Request</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="vendors" class="vendors-section">
+        <div class="container">
+            <h2 class="section-title">Our Trusted Vendors</h2>
+            <p class="section-subtitle">We work with the best suppliers to ensure quality ingredients</p>
+            <div class="vendors-grid">
+                <div class="vendor-card">
+                    <img src="images/gallery/612ea4a9-68e0-4979-8ba0-f16db7c5d242.jpg" alt="Flour Supplier">
+                    <h3>Premium Flour Suppliers</h3>
+                    <p>High-quality flour for perfect texture</p>
+                </div>
+                <div class="vendor-card">
+                    <img src="images/gallery/7a799964-a870-44e8-9286-d29ee6036901.jpg" alt="Dairy Supplier">
+                    <h3>Fresh Dairy Products</h3>
+                    <p>Premium butter, milk, and cream</p>
+                </div>
+                <div class="vendor-card">
+                    <img src="images/gallery/b3f7c74b-eb85-488e-b4e2-3e0e7bacdaf5.jpg" alt="Chocolate Supplier">
+                    <h3>Belgian Chocolate</h3>
+                    <p>Finest cocoa and chocolate products</p>
+                </div>
+                <div class="vendor-card">
+                    <img src="images/gallery/ba2a43ad-d3cd-4a6e-81bd-3adbf8b0bcd6.jpg" alt="Fresh Fruits">
+                    <h3>Fresh Fruits & Berries</h3>
+                    <p>Locally sourced fresh ingredients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="internship" class="internship-section">
+        <div class="container">
+            <h2 class="section-title">Student Internship Program</h2>
+            <p class="section-subtitle">Learn the art of baking with hands-on training from our expert bakers</p>
+            
+            <div class="internship-content">
+                <div class="internship-info">
+                    <h3>Why Join Our Program?</h3>
+                    <div class="internship-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Professional Training</h4>
+                            <p>Learn from experienced pastry chefs and bakers</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Certificate of Completion</h4>
+                            <p>Receive a certificate upon successful completion</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <h4>Hands-On Experience</h4>
+                            <p>Work on real orders and gain practical skills</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-clock"></i>
+                            <h4>Flexible Schedule</h4>
+                            <p>Part-time options available for students</p>
+                        </div>
+                    </div>
+
+                    <div class="program-details">
+                        <h3>Program Details</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Duration: 3-6 months</li>
+                            <li><i class="fas fa-check-circle"></i> Training Days: Monday - Saturday</li>
+                            <li><i class="fas fa-check-circle"></i> Time: Flexible (Morning or Afternoon shifts)</li>
+                            <li><i class="fas fa-check-circle"></i> Requirements: Age 16+ and passion for baking</li>
+                            <li><i class="fas fa-check-circle"></i> Skills Covered: Cake decoration, baking techniques, food safety</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="internship-form-container">
+                    <h3>Apply Now</h3>
+                    <form id="internshipForm" class="internship-form">
+                        <div class="form-group">
+                            <label for="studentName">Full Name *</label>
+                            <input type="text" id="studentName" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentEmail">Email *</label>
+                                <input type="email" id="studentEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentPhone">Phone Number *</label>
+                                <input type="tel" id="studentPhone" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentAge">Age *</label>
+                                <input type="number" id="studentAge" min="16" max="30" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentGender">Gender</label>
+                                <select id="studentGender">
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentSchool">School/University *</label>
+                            <input type="text" id="studentSchool" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentLevel">Education Level *</label>
+                                <select id="studentLevel" required>
+                                    <option value="">Select Level</option>
+                                    <option value="secondary">Secondary School</option>
+                                    <option value="certificate">Certificate</option>
+                                    <option value="diploma">Diploma</option>
+                                    <option value="undergraduate">Undergraduate</option>
+                                    <option value="graduate">Graduate</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentAvailability">Preferred Time *</label>
+                                <select id="studentAvailability" required>
+                                    <option value="">Select Time</option>
+                                    <option value="morning">Morning (8AM - 12PM)</option>
+                                    <option value="afternoon">Afternoon (1PM - 5PM)</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentExperience">Previous Baking Experience</label>
+                            <select id="studentExperience">
+                                <option value="none">No Experience</option>
+                                <option value="beginner">Beginner (Home baking)</option>
+                                <option value="intermediate">Intermediate (Some training)</option>
+                                <option value="advanced">Advanced (Professional experience)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentMotivation">Why do you want to join our internship program? *</label>
+                            <textarea id="studentMotivation" rows="4" required placeholder="Tell us about your interest in baking and what you hope to learn..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentAddress">Address</label>
+                            <input type="text" id="studentAddress" placeholder="Your location in Kampala">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Blessed Handly Bakery</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/gallery/dfe67372-bdd1-48e2-98f7-a4e51df28e85.jpg" alt="Our Bakery">
+                </div>
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Blessed Handly Bakery was born from a passion for creating exceptional cakes that bring joy to every celebration. We believe that every cake tells a story, and we're honored to be part of your special moments.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To craft premium quality cakes and pastries that exceed expectations, using only the finest ingredients and attention to detail that makes every bite memorable.</p>
+                    
+                    <h3>What Sets Us Apart</h3>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> 100% Fresh Ingredients Daily</li>
+                        <li><i class="fas fa-check-circle"></i> Custom Designs Tailored to You</li>
+                        <li><i class="fas fa-check-circle"></i> Experienced Pastry Chefs</li>
+                        <li><i class="fas fa-check-circle"></i> Competitive Pricing</li>
+                        <li><i class="fas fa-check-circle"></i> Timely Delivery Guaranteed</li>
+                        <li><i class="fas fa-check-circle"></i> Exceptional Customer Service</li>
+                    </ul>
+                    
+                    <h3>Our Values</h3>
+                    <p>Quality, integrity, and customer satisfaction are at the heart of everything we do. We treat each order with the same care and dedication, whether it's a simple cupcake or an elaborate wedding cake.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Kampala, Uganda</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+256 XXX XXXXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>blessedhandybakery@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Your Phone">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Blessed Handly Bakery</h4>
+                    <p>Crafting sweet memories with every cake</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#custom-cake">Custom Design</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#vendors">Vendors</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for updates and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Blessed Handly Bakery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="ai-config.js?v=2.0"></script>
+    <script src="app.js?v=2.0"></script>
+    <script>
+        // Clear old cached data to prevent old error messages
+        if (localStorage.getItem('chatbot_version') !== '2.0') {
+            localStorage.removeItem('conversationHistory');
+            localStorage.removeItem('advancedAI');
+            localStorage.removeItem('learningData');
+            localStorage.setItem('chatbot_version', '2.0');
+            console.log('Chatbot cache cleared - using fresh AI responses');
+        }
+    </script>
+</body>
+
+<!-- Chatbot Widget -->
+<div class="chatbot-widget" id="chatbotWidget">
+    <div class="chatbot-button" id="chatbotButton">
+        <i class="fas fa-comments"></i>
+        <span>Chat with Us</span>
+    </div>
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-info">
+                <i class="fas fa-bread-slice"></i>
+                <div>
+                    <h4>Rivan - Bakery Assistant</h4>
+                    <p>I'm here to help with your orders!</p>
+                </div>
+            </div>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-welcome">
+                <div class="bot-message">
+                    <p>Hello! I'm Rivan, your AI bakery assistant! Welcome to Blessed Handly Bakery!</p>
+                    <p>I'm here to help you with orders, pricing, custom designs, and any questions about our delicious cakes. How can I assist you today?</p>
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="sendQuickMessage('order')">Place an Order</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('pricing')">Check Pricing</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('custom')">Custom Cake</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('delivery')">Delivery Info</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input-container">
+            <div class="chatbot-input-wrapper">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." maxlength="500">
+                <button id="chatbotSend" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                <button id="chatbotWhatsApp" onclick="sendChatToWhatsApp()" title="Send to WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+            </div>
+            <div class="chatbot-typing" id="chatbotTyping" style="display: none;">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>Blessed Handly is typing...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

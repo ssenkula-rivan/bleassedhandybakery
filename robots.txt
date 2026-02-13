@@ -1,0 +1,14 @@
+# robots.txt for Blessed Handly Bakery
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://blessedhandlybakery.com/sitemap.xml
+
+# Disallow admin or private areas (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional)
+Crawl-delay: 10
