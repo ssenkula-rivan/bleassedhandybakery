@@ -4,6 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const bodyParser = require('body-parser');
+const path = require('path');
 const logger = require('./utils/logger');
 const database = require('./config/database');
 
@@ -43,6 +44,9 @@ app.use('/api/', limiter);
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
+// Serve static files from parent directory (website files)
+app.use(express.static(path.join(__dirname, '..')));
+
 // Request logging
 app.use((req, res, next) => {
   logger.info(`${req.method} ${req.path}`, {
@@ -52,20 +56,15 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes
+// API Routes
 app.use('/api/health', healthRoutes);
 app.use('/api/website', websiteRoutes);
 app.use('/api/telegram', telegramRoutes);
 app.use('/api/whatsapp', whatsappRoutes);
 
-// Root endpoint
+// Serve index.html for root
 app.get('/', (req, res) => {
-  res.json({
-    service: 'Blessed Handly Bakery Bot',
-    version: '1.0.0',
-    status: 'running',
-    channels: ['website', 'telegram', 'whatsapp']
-  });
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 // 404 handler

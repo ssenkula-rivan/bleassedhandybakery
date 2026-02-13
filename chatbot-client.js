@@ -2,7 +2,7 @@
 // Connects to backend server for AI responses
 
 class BakeryChatbot {
-  constructor(apiUrl = 'https://bakery-bot.onrender.com/api/website') {
+  constructor(apiUrl = '/api/website') {
     this.apiUrl = apiUrl;
     this.userId = this.getUserId();
     this.sessionId = this.getSessionId();
