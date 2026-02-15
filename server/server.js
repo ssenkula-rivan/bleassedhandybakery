@@ -8,6 +8,19 @@ const path = require('path');
 const logger = require('./utils/logger');
 const database = require('./config/database');
 
+// Check required environment variables
+if (!process.env.MONGODB_URI) {
+  console.error('❌ ERROR: MONGODB_URI environment variable is not set!');
+  console.error('Please add MONGODB_URI in Render dashboard Environment tab');
+  process.exit(1);
+}
+
+if (!process.env.OPENAI_API_KEY) {
+  console.error('❌ ERROR: OPENAI_API_KEY environment variable is not set!');
+  console.error('Please add OPENAI_API_KEY in Render dashboard Environment tab');
+  process.exit(1);
+}
+
 // Import routes
 const websiteRoutes = require('./routes/website');
 const telegramRoutes = require('./routes/telegram');
