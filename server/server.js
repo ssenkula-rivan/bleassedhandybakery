@@ -115,16 +115,26 @@ async function gracefulShutdown() {
 // Start server
 async function startServer() {
   try {
+    console.log('🚀 Starting Blessed Handly Bakery server...');
+    console.log('📊 Environment:', process.env.NODE_ENV || 'development');
+    console.log('🔌 Port:', PORT);
+    
     // Connect to database
+    console.log('📡 Connecting to MongoDB...');
     await database.connect();
     
     // Start Express server
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`✅ Server running on port ${PORT}`);
+      console.log(`📱 Channels: Website, Telegram, WhatsApp`);
+      console.log(`🌐 Website: https://bleassedhandybakery.onrender.com`);
       logger.info(`🚀 Server running on port ${PORT}`);
       logger.info(`📱 Channels: Website, Telegram, WhatsApp`);
       logger.info(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
     });
   } catch (error) {
+    console.error('❌ Failed to start server:', error.message);
+    console.error('Full error:', error);
     logger.error('Failed to start server:', error);
     process.exit(1);
   }
